@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An interactive preview of The Lift, HeyMax’s signature text reveal.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>HeyMax Motion · The Lift</title>
+<style>
+:root{color-scheme:light;--purple:#21005E;--violet:#4000B8;--lilac:#F3EAFF;--muted:#5F5A73;--line:#E3DEF0;--paper:#F6F6FC;--ink:#1A1A1A;font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);line-height:1.55}main,header>div,footer>div{max-width:1130px;margin:auto;padding-inline:clamp(20px,5vw,48px)}
+header{border-bottom:1px solid var(--line);background:#fff}header>div,footer>div{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}header b{font-size:20px;letter-spacing:-.055em;color:var(--purple)} a{color:var(--violet);font-weight:650;text-underline-offset:.22em;font-size:14px}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+main{padding-block:clamp(42px,8vw,94px)} #motion{display:grid;grid-template-columns:minmax(250px,4fr) minmax(0,6fr);gap:clamp(22px,5vw,64px);align-items:start}
+.eyebrow{display:inline-block;border-radius:999px;padding:5px 11px;background:var(--lilac);color:var(--violet);font-size:11px;font-weight:750;letter-spacing:.095em;text-transform:uppercase;white-space:nowrap}
+h1{color:var(--purple);font-size:clamp(46px,7vw,77px);line-height:1.02;letter-spacing:-.06em;margin:16px 0}p{margin:0 0 12px}
+.lede{color:var(--muted);max-width:34ch;font-size:clamp(16px,2vw,19px)}
+.moves{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:11px}.moves li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}.moves b{color:var(--purple)}.moves i{width:24px;height:24px;background:var(--lilac);border-radius:50%;display:grid;place-content:center;color:var(--violet);font-size:11px;font-weight:750;font-style:normal;flex:none}
+.panel{border:1px solid var(--line);border-radius:16px;padding:clamp(12px,2.8vw,24px);background:var(--paper);min-width:0}.controls{display:flex;align-items:end;flex-wrap:wrap;gap:12px 16px;margin-bottom:14px}
+.ctl{display:grid;gap:5px;font-size:11px;font-weight:750;letter-spacing:.055em;text-transform:uppercase;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);background:#fff;border-radius:10px;padding:3px;gap:2px}
+button{font:inherit;cursor:pointer}.seg button{min-height:34px;border:0;background:transparent;border-radius:7px;padding:5px 10px;font-size:13px;font-weight:650;color:var(--muted)}
+.seg button[aria-pressed=true]{background:var(--purple);color:#fff}.clip{display:inline-flex;min-height:41px;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:600}.clip input{accent-color:var(--violet)}
+.stage{min-height:clamp(200px,32vw,310px);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:radial-gradient(120% 120% at 50% 0%,#F9F5FF,#F5E5F9);padding:24px 8px}
+.lift-text{font-weight:700;color:var(--purple);font-size:clamp(26px,4.4vw,52px);letter-spacing:-.024em;line-height:1.1;text-align:center}
+.ln{display:block;overflow:hidden;padding:.02em .06em .12em;width:fit-content;margin:auto}.ln.show{outline:1.5px dashed var(--violet);background:repeating-linear-gradient(45deg,rgba(64,0,184,.05) 0 6px,transparent 6px 12px)}.u{display:inline-block;white-space:nowrap}
+.readout{display:flex;gap:5px 14px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}.readout b{color:var(--purple)}
+.actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}.actions button{border:1px solid var(--purple);background:#fff;color:var(--purple);border-radius:99px;padding:6px 13px;font-size:13px;font-weight:650;min-height:36px}.actions button:hover{background:var(--lilac)}
+.note{font-size:12px;color:var(--muted);margin:12px 0 0}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media(max-width:680px){#motion{grid-template-columns:minmax(0,1fr)}.moves{margin-top:19px}.lift-text{font-size:clamp(26px,7.5vw,44px)}}
+</style>
+</head>
+<body>
+<header><div><b>HeyMax</b><a href="https://marketing.heymax.ai/design">Brand guidelines</a></div></header>
+<main>
+<section id="motion" aria-labelledby="title">
+  <div>
+    <span class="eyebrow">Motion preview</span>
+    <h1 id="title">The Lift.</h1>
+    <p class="lede">Type rises from behind an invisible line, settles with a slow drift, then exits upward.</p>
+    <ol class="moves">
+      <li><i aria-hidden="true">1</i><b>Enter</b> 24 frames per line or word</li>
+      <li><i aria-hidden="true">2</i><b>Hold</b> Slow, steady drift</li>
+      <li><i aria-hidden="true">3</i><b>Exit</b> 12 frames per line or word</li>
+    </ol>
+  </div>
+  <div class="panel">
+    <div class="controls">
+      <div class="ctl">Level<div class="seg" role="group" aria-label="Level" id="level"><button type="button" data-level="line" aria-pressed="false">Lines</button><button type="button" data-level="word" aria-pressed="true">Words</button></div></div>
+      <div class="ctl">Speed<div class="seg" role="group" aria-label="Speed" id="speed"><button type="button" data-speed="1" aria-pressed="true">1X</button><button type="button" data-speed="0.5" aria-pressed="false">1/2X</button></div></div>
+      <label class="clip"><input id="clip" type="checkbox">Show clip line</label>
+    </div>
+    <div class="stage" id="stage">
+      <div id="sample" class="lift-text" aria-label="Ready to take off. Let’s go."><span class="ln" aria-hidden="true">Ready to take off.</span><span class="ln" aria-hidden="true">Let’s go.</span></div>
+    </div>
+    <div class="readout" id="timing"></div>
+    <div class="actions"><button type="button" id="play">Replay</button><button type="button" id="pause">Pause</button></div>
+    <p class="note">Timing is measured at 25 fps. Half speed is for inspecting the sequence.</p>
+  </div>
+</section>
+</main>
+<footer><div><span>© HeyMax</span><span>Interactive reference</span></div></footer>
+<script>
+"use strict";
+const el=id=>document.getElementById(id);
+const stage=el("stage"), sample=el("sample"), reduced=matchMedia("(prefers-reduced-motion: reduce)");
+const lines=["Ready to take off.","Let’s go."], fr=40, stagger={line:4,word:2};
+const lift="cubic-bezier(.22, 1, .36, 1)", depart="cubic-bezier(.11, 0, .5, 0)";
+let level="word", speed=1, visible=false, playing=!reduced.matches, generation=0;
+const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const settled=async animations=>Promise.allSettled(animations.map(anim=>anim.finished));
+function paint(){
+  sample.replaceChildren();
+  for(const line of lines){
+    const row=document.createElement("span");
+    row.className="ln";
+    row.classList.toggle("show",el("clip").checked);
+    row.setAttribute("aria-hidden","true");
+    for(const part of level==="line"?[line]:line.split(/(\s+)/)){
+      if(/^\s+$/.test(part)){row.append(part);continue;}
+      const unit=document.createElement("span");unit.className="u";unit.textContent=part;row.append(unit);
+    }
+    sample.append(row);
+  }
+  const n=sample.querySelectorAll(".u").length, st=stagger[level], inF=24+st*(n-1), outF=12+n-1;
+  el("timing").innerHTML=`<span><b>${n}</b> ${level}s · ${st}f stagger</span><span>Enter <b>${inF}f</b> (${inF*fr/speed} ms)</span><span>Hold <b>${1400/speed} ms</b></span><span>Exit <b>${outF}f</b> (${outF*fr/speed} ms)</span>`;
+}
+function stop(){generation++;stage.getAnimations({subtree:true}).forEach(animation=>animation.cancel());}
+function animation(node,start,end,duration,delay,easing){
+  return node.animate([{transform:`translateY(${start})`},{transform:`translateY(${end})`}],{duration,delay,easing,fill:"both"});
+}
+async function replay(once=false){
+  stop();const ticket=generation, alive=()=>ticket===generation;
+  do{
+    if(!alive())return;
+    stage.getAnimations({subtree:true}).forEach(a=>a.cancel());
+    const units=Array.from(sample.querySelectorAll(".u")), scale=1/speed, st=stagger[level];
+    await settled(units.map((u,i)=>animation(u,"115%","0",24*fr*scale,i*st*fr*scale,lift)));
+    if(!alive())return;
+    await settled([animation(sample,"0","-8px",1400*scale,0,"linear")]);
+    if(!alive())return;
+    await settled(units.map((u,i)=>animation(u,"0","-115%",12*fr*scale,i*fr*scale,depart)));
+    if(!alive())return;
+    if(once){stop();return;}
+    await delay(500);
+  }while(playing&&visible&&alive());
+}
+function sync(){el("pause").textContent=playing?"Pause":"Play";el("play").textContent="Replay";}
+function refresh(){stop();paint();if(playing&&visible)replay();}
+function options(id,key,setter){
+  const container=el(id);
+  container.addEventListener("click",event=>{
+    const button=event.target.closest("button");if(!button)return;
+    for(const option of container.querySelectorAll("button"))option.setAttribute("aria-pressed",String(option===button));
+    setter(button.dataset[key]);refresh();
+  });
+}
+options("level","level",v=>{level=v;});
+options("speed","speed",v=>{speed=Number(v);});
+el("clip").addEventListener("change",event=>sample.querySelectorAll(".ln").forEach(row=>row.classList.toggle("show",event.target.checked)));
+el("play").addEventListener("click",()=>replay(reduced.matches||!playing));
+el("pause").addEventListener("click",()=>{
+  if(reduced.matches){replay(true);return;}
+  playing=!playing;sync();if(playing)replay();else stop();
+});
+reduced.addEventListener("change",()=>{playing=!reduced.matches;sync();refresh();});
+paint();sync();
+new IntersectionObserver(([entry])=>{
+  visible=entry.isIntersecting;
+  if(visible&&playing)replay();else stop();
+},{threshold:.35}).observe(stage);
+</script>
+</body>
+</html>
